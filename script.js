@@ -4,15 +4,15 @@ function updateCurrentDay() {
     const currentDate = new Date();
     const currentDay = daysOfWeek[currentDate.getUTCDay()];
     const currentDayElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
-    currentDayElement.textContent = currentDay;
+    currentDayElement.textContent = `Current day of the week: ${currentDay}`;
 }
 
 // Function to update the current UTC time
 function updateCurrentUTCTime() {
     const currentDate = new Date();
-    const currentUTCTime = currentDate.toUTCString();
+    const currentUTCTimeMilliseconds = currentDate.getTime(); // Get time in milliseconds since the Unix epoch
     const currentUTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
-    currentUTCTimeElement.textContent = currentUTCTime;
+    currentUTCTimeElement.textContent = `Current UTC Time: ${currentUTCTimeMilliseconds}`;
 }
 
 // Call the update functions on page load
